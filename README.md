@@ -16,14 +16,15 @@ Put `run.py` in the folder containing your photos, then:
 
 It will create an `index.html` page, and a `thumb` folder containing all thumbnails.
 
-*Note.* The current version of the code assumes your photos have `.jpg` extension (not uppercase). If not, please change the `glob` filter.
+**Note.** The current version of the code assumes your photos have `.jpg` extension (not uppercase). If not, please change the `glob` filter on line 22 of `run.py`.
 
 ## Useful links
 
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Jeffrey Friedl's Image Metadata Viewer](http://exif.regex.info)
 - Two useful Stack Overflow posts:
     - [iOS Image Orientation has Strange Behavior](https://stackoverflow.com/questions/10600613/ios-image-orientation-has-strange-behavior)
-    - [](https://stackoverflow.com/questions/12026441/is-there-a-way-to-tell-browsers-to-honor-the-jpeg-exif-orientation)
+    - [Is there a way to tell browsers to honor the jpeg exif orientation?](https://stackoverflow.com/questions/12026441/is-there-a-way-to-tell-browsers-to-honor-the-jpeg-exif-orientation)
 
 Long story short: sometimes, images are displayed in landscape instead of portrait in browsers. It is because some phones (ex. iPhone) use the Orientation EXIF metadata, which is [ignored by browsers](https://stackoverflow.com/questions/12026441/is-there-a-way-to-tell-browsers-to-honor-the-jpeg-exif-orientation) unless you have `image-orientation: from-image` which is [only recognized by Firefox so far](https://developer.mozilla.org/en-US/docs/Web/CSS/image-orientation#Browser_compatibility).  
 ImageMagick saved us, by using the flag `-auto-orient` for creating the thumbnails.
